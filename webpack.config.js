@@ -1,17 +1,21 @@
-const path = require( 'path');
+const path = require('path');
+const serverlessWebpack = require('serverless-webpack');
 
 module.exports = {
-  entry: './main.js',
+  entry: serverlessWebpack.lib.entries,
   target: 'node',
+  mode: 'development',
   module: {
     rules: [{
       test: /\.js$/,
       loader: ['babel-loader'],
       include: __dirname,
       exclude: /node_modules/,
-    }]
+    }],
   },
-  optimization: {
-    minimize: false
+  output: {
+    libraryTarget: 'commonjs',
+    path: path.join(__dirname, 'dist', 'lambda'),
+    filename: '[name].js',
   },
 };
