@@ -1,2 +1,3 @@
-
-export const helloSvc = ({name}) => `Hello ${name}! Your function executed successfully`;
+export const helloSvc = ({ name }) => {
+  return `Hello ${name}! Your function executed successfully`;
+};
