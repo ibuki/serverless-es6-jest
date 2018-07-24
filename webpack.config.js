@@ -1,12 +1,17 @@
+const path = require( 'path');
+
 module.exports = {
-  entry: './handler.js',
+  entry: './main.js',
   target: 'node',
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      loader: ['babel-loader'],
       include: __dirname,
       exclude: /node_modules/,
     }]
-  }
+  },
+  optimization: {
+    minimize: false
+  },
 };
