@@ -1,5 +1,5 @@
 
-import { helloSvc } from './services/helloSvc';
+import { helloSvc } from '../services/helloSvc';
 
 export const helloLambda = (event, context, callback) => {
 
